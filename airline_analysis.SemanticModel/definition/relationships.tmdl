@@ -1,0 +1,19 @@
+relationship 42320a6d-5945-49b0-958c-69a263a82507
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Flight_Data.Date
+	toColumn: LocalDateTable_a23eebc7-35d1-46ab-b92d-7efa0a80e8af.Date
+
+relationship 0d610434-ec16-468e-be90-ff97f0bb4d28
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Flight_Data.Scheduled_Departure
+	toColumn: LocalDateTable_0e11dda0-075e-4984-a287-9149d727d33c.Date
+
+relationship 7c6d6b27-0b45-446b-a8e3-d92725a5d61f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Flight_Data.Actual_Departure
+	toColumn: LocalDateTable_216002d8-80a1-48a0-9a4b-6e5b3f7c18a5.Date
+
+relationship 685a4731-b5d7-6d2f-6341-06f414d18bbe
+	fromColumn: Flight_Data.Airline_Code
+	toColumn: Aircraft_Images.Airline_Code
+

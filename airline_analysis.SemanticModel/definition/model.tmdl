@@ -1,0 +1,25 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Flight_Data","Aircraft_Images"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Flight_Data
+ref table DateTableTemplate_bf3696eb-dbc1-435d-b5ae-42f126076119
+ref table LocalDateTable_a23eebc7-35d1-46ab-b92d-7efa0a80e8af
+ref table LocalDateTable_0e11dda0-075e-4984-a287-9149d727d33c
+ref table LocalDateTable_216002d8-80a1-48a0-9a4b-6e5b3f7c18a5
+ref table Aircraft_Images
+ref table MeasuresTable
+
+ref cultureInfo en-IN
+

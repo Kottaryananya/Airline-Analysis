@@ -1,0 +1,58 @@
+table Aircraft_Images
+	lineageTag: a829dbe6-93ac-4aca-8b11-e592a86bc55e
+
+	column Airline
+		dataType: string
+		lineageTag: af82c78f-558f-4814-86c6-d878811a0755
+		summarizeBy: none
+		sourceColumn: Airline
+
+		annotation SummarizationSetBy = Automatic
+
+	column Airline_Code
+		dataType: string
+		lineageTag: f74df3d5-592f-40b4-b544-6ab60067940b
+		summarizeBy: none
+		sourceColumn: Airline_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aircraft_Display_Name
+		dataType: string
+		lineageTag: d41a9890-dd46-44ad-93c8-60f247afd121
+		summarizeBy: none
+		sourceColumn: Aircraft_Display_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aircraft_Image_URL
+		dataType: string
+		lineageTag: e5df5fe9-df39-47c9-b3f7-90edbfcfedab
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Aircraft_Image_URL
+
+		annotation SummarizationSetBy = Automatic
+
+	column Image_Alt_Text
+		dataType: string
+		lineageTag: 1397d885-ff09-4588-8f6d-c7469f57328c
+		summarizeBy: none
+		sourceColumn: Image_Alt_Text
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Aircraft_Images = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("C:\Users\kotta\Downloads\Indian_Airlines_Dataset.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Aircraft_Images", Kind = "Sheet"]}[Data],
+				  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}}, "en-US"),
+				  #"Removed bottom rows" = Table.RemoveLastN(#"Changed column type", 1),
+				  #"Promoted headers" = Table.PromoteHeaders(#"Removed bottom rows", [PromoteAllScalars = true])
+				in
+				  #"Promoted headers"
+
+	annotation PBI_ResultType = Table
+

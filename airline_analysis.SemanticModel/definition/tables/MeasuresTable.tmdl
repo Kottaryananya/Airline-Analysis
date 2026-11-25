@@ -1,0 +1,44 @@
+table MeasuresTable
+	lineageTag: aa847be6-54c1-4d9c-83a1-e33c8337f807
+
+	measure 'Seat Capacity' = SUM(Flight_Data[Seat_Capacity])
+		formatString: 0.0
+		lineageTag: d1e2b2f0-b803-4904-91e9-2a9dcce3061e
+
+	measure 'Fuel Efficiency' = DIVIDE(SUM(Flight_Data[Fuel_Efficiency_L_per_100km_Est])*100,SUM(Flight_Data[Distance_km]),0)
+		lineageTag: 32d487c0-aad9-44ef-b5db-c1848cf5d5f6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Flight Duration' = AVERAGE(Flight_Data[Flight_Duration_Min])
+		lineageTag: 56df55cc-f21d-4002-ac11-46a640b603c6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CO2 per Passenger' = DIVIDE(SUM(Flight_Data[CO2_Emissions_Tonnes_Est])*1000, SUM(Flight_Data[Passengers]),0)
+		lineageTag: 33cd21e0-f790-495d-87cd-1ecb0fd15c3e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Passengers' = SUM(Flight_Data[Passengers])
+		formatString: 0.00
+		lineageTag: 4dc960e3-b978-4113-ac6a-e012dfe97d8b
+
+	measure 'Selected Aircraft Image' = SELECTEDVALUE(Aircraft_Images[Aircraft_Image_URL])
+		lineageTag: 951c660c-28ba-4b34-bcb6-acf33d3b33cd
+
+	column Value
+		formatString: 0
+		lineageTag: 9e10cbbc-f58a-4a11-be28-4cf6ef7eb168
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MeasuresTable = calculated
+		mode: import
+		source = {BLANK()}
+
+	annotation PBI_Id = 7ebac54102e744dc9847c99a945c3ed7
+

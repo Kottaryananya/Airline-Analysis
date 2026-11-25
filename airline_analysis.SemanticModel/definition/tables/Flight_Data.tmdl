@@ -1,0 +1,370 @@
+table Flight_Data
+	lineageTag: 2f1ee2cc-5ff3-4c3c-a025-49dc1e2b3ba1
+
+	column Flight_ID
+		dataType: string
+		lineageTag: c12ca6f9-0b88-40b0-957b-b2ac92331f7d
+		summarizeBy: none
+		sourceColumn: Flight_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flight_Number
+		dataType: string
+		lineageTag: 6a42920e-56ff-4876-8ce6-4c030a98419e
+		summarizeBy: none
+		sourceColumn: Flight_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b4f44545-40e5-44c7-82a0-86ac2888d556
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 42320a6d-5945-49b0-958c-69a263a82507
+			defaultHierarchy: LocalDateTable_a23eebc7-35d1-46ab-b92d-7efa0a80e8af.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Airline
+		dataType: string
+		lineageTag: 6a36b4af-b869-4d79-ad6b-586be26eb7cc
+		summarizeBy: none
+		sourceColumn: Airline
+
+		annotation SummarizationSetBy = Automatic
+
+	column Airline_Code
+		dataType: string
+		lineageTag: 81cabbfd-5296-4008-b20e-62030710af26
+		summarizeBy: none
+		sourceColumn: Airline_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aircraft_ID
+		dataType: string
+		lineageTag: 1f8c9673-d1d0-44c7-9979-3fb34a0f9de5
+		summarizeBy: none
+		sourceColumn: Aircraft_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aircraft_Model
+		dataType: string
+		lineageTag: e0523f3e-e7ac-46af-970b-367295b942bd
+		summarizeBy: none
+		sourceColumn: Aircraft_Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aircraft_Type
+		dataType: string
+		lineageTag: b663bac5-3228-40e8-9c8f-18fd817c59ee
+		summarizeBy: none
+		sourceColumn: Aircraft_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Seat_Capacity
+		dataType: int64
+		formatString: 0
+		lineageTag: cdc39429-4547-4289-b7c3-a7ab7b350e52
+		summarizeBy: sum
+		sourceColumn: Seat_Capacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin_Airport
+		dataType: string
+		lineageTag: 3f4e7be2-9af3-439a-a217-bb612c94bf6c
+		summarizeBy: none
+		sourceColumn: Origin_Airport
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin_Airport_Name
+		dataType: string
+		lineageTag: 7959fc8e-14d7-4ed8-a0e2-c05f18e23b30
+		summarizeBy: none
+		sourceColumn: Origin_Airport_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin_City
+		dataType: string
+		lineageTag: afaf07bd-cae9-4bb7-95e8-26ad89f98c76
+		summarizeBy: none
+		sourceColumn: Origin_City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Origin_Region
+		dataType: string
+		lineageTag: 230bfe9d-14af-4da4-a9c6-86310f6c3539
+		summarizeBy: none
+		sourceColumn: Origin_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination_Airport
+		dataType: string
+		lineageTag: 02bd629b-0cc8-49f4-9a80-0b5769991fc8
+		summarizeBy: none
+		sourceColumn: Destination_Airport
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination_Airport_Name
+		dataType: string
+		lineageTag: 95be272d-a764-44cb-9d96-f835943379c5
+		summarizeBy: none
+		sourceColumn: Destination_Airport_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination_City
+		dataType: string
+		lineageTag: 6f5018d1-ddec-41ef-9f5f-d758f13230b1
+		summarizeBy: none
+		sourceColumn: Destination_City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Destination_Region
+		dataType: string
+		lineageTag: 693e99ae-b3c2-4f83-9a76-80b4ecdddaa0
+		summarizeBy: none
+		sourceColumn: Destination_Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Route
+		dataType: string
+		lineageTag: 912c0279-e8b4-48c5-8d17-a625ff0de1a3
+		summarizeBy: none
+		sourceColumn: Route
+
+		annotation SummarizationSetBy = Automatic
+
+	column Distance_km
+		dataType: int64
+		formatString: 0
+		lineageTag: 14e3dd34-4db2-4c66-a401-b1b702adec7b
+		summarizeBy: sum
+		sourceColumn: Distance_km
+
+		annotation SummarizationSetBy = Automatic
+
+	column Scheduled_Departure
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d978604b-8fec-4d32-8fd7-c6a4cd5b9b41
+		summarizeBy: none
+		sourceColumn: Scheduled_Departure
+
+		variation Variation
+			isDefault
+			relationship: 0d610434-ec16-468e-be90-ff97f0bb4d28
+			defaultHierarchy: LocalDateTable_0e11dda0-075e-4984-a287-9149d727d33c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Actual_Departure
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c151866c-a6d6-41eb-b8ba-4d969ae317a3
+		summarizeBy: none
+		sourceColumn: Actual_Departure
+
+		variation Variation
+			isDefault
+			relationship: 7c6d6b27-0b45-446b-a8e3-d92725a5d61f
+			defaultHierarchy: LocalDateTable_216002d8-80a1-48a0-9a4b-6e5b3f7c18a5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Flight_Duration_Min
+		dataType: int64
+		formatString: 0
+		lineageTag: 55b949d9-70ea-402d-915d-be169620a53f
+		summarizeBy: sum
+		sourceColumn: Flight_Duration_Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column Departure_Delay_Min
+		dataType: int64
+		formatString: 0
+		lineageTag: f328deaf-8c1c-496a-9045-4dd83bbaa894
+		summarizeBy: sum
+		sourceColumn: Departure_Delay_Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column Arrival_Delay_Min
+		dataType: int64
+		formatString: 0
+		lineageTag: 630b9f79-6da8-4e69-98ea-64ca6187c0e7
+		summarizeBy: sum
+		sourceColumn: Arrival_Delay_Min
+
+		annotation SummarizationSetBy = Automatic
+
+	column On_Time_Flag
+		dataType: int64
+		formatString: 0
+		lineageTag: e186010c-1310-43c7-9660-64d3c2ca2fc0
+		summarizeBy: sum
+		sourceColumn: On_Time_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cancelled_Flag
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b1bc0ef-1798-4375-af66-e673d61bb494
+		summarizeBy: sum
+		sourceColumn: Cancelled_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Passengers
+		dataType: int64
+		formatString: 0
+		lineageTag: 98c68af2-2a28-409e-8883-0e1dca0b6272
+		summarizeBy: sum
+		sourceColumn: Passengers
+
+		annotation SummarizationSetBy = Automatic
+
+	column Load_Factor_Pct
+		dataType: double
+		lineageTag: bb9df29e-24b7-433e-8543-ab966d1abd42
+		summarizeBy: sum
+		sourceColumn: Load_Factor_Pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Average_Ticket_Fare_INR
+		dataType: double
+		lineageTag: 3cff9e48-c29e-4c27-8425-8830e89e340c
+		summarizeBy: sum
+		sourceColumn: Average_Ticket_Fare_INR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Revenue_INR
+		dataType: double
+		lineageTag: 6b46e909-2b6c-4ab8-b58e-d5c9f3c352bd
+		summarizeBy: sum
+		sourceColumn: Revenue_INR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fuel_Used_Litres_Est
+		dataType: double
+		lineageTag: fcb51114-ad46-4b57-8bc1-1162dad31670
+		summarizeBy: sum
+		sourceColumn: Fuel_Used_Litres_Est
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Fuel_Efficiency_L_per_100km_Est
+		dataType: double
+		lineageTag: cc40fee5-e37b-4d6d-9a60-8a82de84c7fc
+		summarizeBy: sum
+		sourceColumn: Fuel_Efficiency_L_per_100km_Est
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CO2_Emissions_Tonnes_Est
+		dataType: double
+		lineageTag: e9aa08d2-cf34-4334-98ae-6db9c9a9d8e5
+		summarizeBy: sum
+		sourceColumn: CO2_Emissions_Tonnes_Est
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Customer_Rating
+		dataType: double
+		lineageTag: 493e3f8a-31a4-4be7-9842-1c726e6d1a38
+		summarizeBy: sum
+		sourceColumn: Customer_Rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Customer_Complaints
+		dataType: int64
+		formatString: 0
+		lineageTag: 0c1e1098-c5e2-4c23-a40c-ffef1cccaa92
+		summarizeBy: sum
+		sourceColumn: Customer_Complaints
+
+		annotation SummarizationSetBy = Automatic
+
+	column Baggage_Issues
+		dataType: int64
+		formatString: 0
+		lineageTag: 571ab72a-492c-4888-a704-a66e4ba783b5
+		summarizeBy: sum
+		sourceColumn: Baggage_Issues
+
+		annotation SummarizationSetBy = Automatic
+
+	column Operating_Cost_INR_Est
+		dataType: double
+		lineageTag: 27616a17-b40f-4f29-8d51-1a10f2194ca0
+		summarizeBy: sum
+		sourceColumn: Operating_Cost_INR_Est
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Estimated_Profit_INR
+		dataType: double
+		lineageTag: b6ea68af-60b8-4a0c-b161-0670f8595b16
+		summarizeBy: sum
+		sourceColumn: Estimated_Profit_INR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Flight_Data = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("C:\Users\kotta\Downloads\Indian_Airlines_Dataset.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Flight_Data", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Flight_ID", type text}, {"Flight_Number", type text}, {"Date", type date}, {"Airline", type text}, {"Airline_Code", type text}, {"Aircraft_ID", type text}, {"Aircraft_Model", type text}, {"Aircraft_Type", type text}, {"Seat_Capacity", Int64.Type}, {"Origin_Airport", type text}, {"Origin_Airport_Name", type text}, {"Origin_City", type text}, {"Origin_Region", type text}, {"Destination_Airport", type text}, {"Destination_Airport_Name", type text}, {"Destination_City", type text}, {"Destination_Region", type text}, {"Route", type text}, {"Distance_km", Int64.Type}, {"Scheduled_Departure", type datetime}, {"Actual_Departure", type datetime}, {"Flight_Duration_Min", Int64.Type}, {"Departure_Delay_Min", Int64.Type}, {"Arrival_Delay_Min", Int64.Type}, {"On_Time_Flag", Int64.Type}, {"Cancelled_Flag", Int64.Type}, {"Passengers", Int64.Type}, {"Load_Factor_Pct", type number}, {"Average_Ticket_Fare_INR", type number}, {"Revenue_INR", type number}, {"Fuel_Used_Litres_Est", type number}, {"Fuel_Efficiency_L_per_100km_Est", type number}, {"CO2_Emissions_Tonnes_Est", type number}, {"Customer_Rating", type number}, {"Customer_Complaints", Int64.Type}, {"Baggage_Issues", Int64.Type}, {"Operating_Cost_INR_Est", type number}, {"Estimated_Profit_INR", type number}}, "en-US"),
+				  #"Removed duplicates" = Table.Distinct(#"Changed column type", {"Flight_ID"}),
+				  #"Removed blank rows" = Table.SelectRows(#"Removed duplicates", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				  #"Removed blank rows"
+
+	annotation PBI_ResultType = Table
+
